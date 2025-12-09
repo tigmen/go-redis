@@ -56,7 +56,7 @@ func (s *Server) readLoop(conn net.Conn) {
 	for {
 		n, err := conn.Read(buf)
 		if err != nil {
-			log.Printf("Read error: %s", err)
+			log.Fatalf("Read error: %s", err)
 			continue
 		}
 		msg := buf[:n]
